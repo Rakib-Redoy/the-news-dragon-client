@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import LeftNavFooter from './LeftNavFooter';
 
 const LeftNav = () => {
     const [categories, setCategories] =useState([]);
@@ -14,11 +15,12 @@ const LeftNav = () => {
         <div>
             <h4>All Categories</h4>
             {
-                categories.map(category=> <p class="font-weight-bold"
+                categories.map(category=> <p className="font-weight-bold"
                 key={category.id}>
                     <Link to={`/category/${category.id}`} className='text-muted font-weight-bold text-decoration-none'>{category.name}</Link>
                 </p>)
             }
+            <LeftNavFooter></LeftNavFooter>
         </div>
     );
 };
